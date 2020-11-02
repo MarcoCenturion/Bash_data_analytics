@@ -1,0 +1,1 @@
+itr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | awk '/product/ {print $2" " $6 " "$9} '

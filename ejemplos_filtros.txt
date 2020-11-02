@@ -1,0 +1,54 @@
+# Filtro agencia, producto, frecuencia, limpieza de separadores ? / ,
+
+tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | awk '/product/ {print $2" " $6 " "$9} '
+
+# Agencia, vuelo, fecha
+
+# IBM 
+
+https://developer.ibm.com/technologies/systems/articles/au-unixtext/
+
+# Manupulacion de textos en espaol
+
+http://persoal.citius.usc.es/tf.pena/ASR/Tema_2html/node23.html
+
+# manual on line vim
+https://www.tutorialspoint.com/unix/unix-vi-editor.htm
+
+# Expresiones regulares en Bash 
+https://developer.ibm.com/es/tutorials/l-lpic1-v3-103-7/
+
+
+# filtro vuelos con awk
+tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | awk '/vuelos/ {print "Origen " $5" Destino "$6" Fecha "$7" Repeticion " $10 }
+
+# Filtrar con awk columnas vuelos y filtrar con grep fechas y destinos puntuales
+| tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | awk '/vuelos/ {print " Agencia: " $2 " Origen: " $5" Destino: "$6" Fecha: "$7 } ' | grep -E 'BRC|IGR|MDQ|FTE|USH|CPC' | grep -E '10-2020|11-2020' | csvlook
+
+# NADA QUE VER / Criptografia ROT13 con tr
+Codificar: tr 'A-Za-z' 'N-ZA-Mn-za-m' - Decodificar tr 'N-ZA-Mn-za-m' tr 'A-Za-z'
+
+# ejemplo filtrador awk para hoteles (salida formato planilla con csvlook)
+tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hotel | awk '{print $2" "$7 " " $8}' | csvlook
+
+# idem vuelos (cambia el orden de los registros 
+tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | awk '{print $2" "$5 "-"$6 " " $7" "$10}' | csvlook
+
+#idem producto con la frecuencia de las busquedas
+ tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep produc | awk '{print $2" "$6" "$8}' | csvlook
+
+
+# idem cotizador off line
+tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep cotizado | awk '{print $2" "$6" "$7" "$8}' | csvlook
+
+#filtro para mes puntual destino puntual
+grep -E 'BRC|IGR|MDQ|FTE|USH|CPC' | grep -E '10-2020|11-2020'
+
+# busqueda hoteles por agencia, fecha puntual, awk filtrando cantidad de repeticiones mayor a 2 ($11 > 2)
+tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hotel | grep -E '11-2020|12-2020' | awk '$11 > 2 {print $2" "$7 " " $8" "$9" "$11}' | csvlook
+
+# buscar vuelos, fecha puntual, awk con mayor a 1 busqueda
+tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | grep -E '11-2020|12-2020' | awk '$10 > 1 {print $2" "$5">" $6 " " $7" "$10}'
+
+# doble filtro con awk vuelos
+awk '$10 >2 && $15 >= 1 {print $2" "$5" "$6}

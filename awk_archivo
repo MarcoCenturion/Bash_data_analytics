@@ -1,0 +1,22 @@
+# Archivo awk para hacer pivot de columnas
+
+BEGIN 	{ 
+	FS = ",|:" 
+}
+
+{
+	agencia=$2
+	for (i=2; i<=NF; i++) {
+		vert=$i
+		dato_viejo=vertical[vert]
+		vertical[vert]=agencia" "dato_viejo
+		}
+		}
+
+END {
+	for (verti in vertical) {
+		print vertical" : " vertical[verti]
+		}
+		}
+
+	

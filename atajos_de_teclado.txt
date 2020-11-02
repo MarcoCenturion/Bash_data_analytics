@@ -1,0 +1,18 @@
+Ctrl + A - Ir al principio de la línea.
+Ctrl + E - Ir al final de la línea.
+Ctrl + L - Limpiar la ventana, tal como el comando “clear”.
+Ctrl + U - Limpia todo lo que esté en la línea antes del cursor. Si estás al final de la línea, limpia todo.
+Ctrl + H - Lo mismo que backspace.
+Ctrl + R - Te permite buscar entre comandos que ya hayas ejecutado. Un lujo.
+Ctrl + C - Mata lo que sea que estés corriendo.
+Ctrl + D - Como si escribieras el comando “exit”.
+Ctrl + Z - Deja lo que estés ejecutando en el fondo. Con “fg” vuelves a activarlo.
+Ctrl + W - Borra la palabra que esté antes del cursor.
+Ctrl + K - Borra todo lo que esté después del cursor.
+Ctrl + T - Alterna las dos últimas letras antes del cursor.
+Ctrl+ S - Detiene la salida por pantalla.
+Ctrl+Q - Reactiva la salida por pantalla.
+Esc + T - Alterna las dos últimas palabras antes del cursor.
+Alt + F - Mueve el cursor una palabra hacia adelante en la línea actual.
+Alt + B - Mueve el cursor una palabra hacia atrás en la línea actual.
+Tab - La magia. Autocompleta comandos y nombres de archivo/carpeta

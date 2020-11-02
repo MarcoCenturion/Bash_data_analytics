@@ -1,0 +1,255 @@
+    1  cd /Carpeta_Doc/
+    2  ls
+    3  cat uso_awk.txt 
+    4* cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv
+    5  cat ejemplos_filtros.txt 
+    6  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | awk '/vuelos/ {print "Origen " $5" Destino "$6" Fecha "$7" Repeticion " $10 }
+cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' 
+    7  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' '
+    8  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | wc -l
+    9  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | awk '{print $5}'
+   10  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | awk '{print $6}'
+   11  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | awk '{print $6 " " $7}'
+   12  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | awk '{print $3" "$6 " " $7}' |
+   13  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | awk '{print $3" "$6 " " $7}' 
+   14  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | awk '{print $2" "$6 " " $7}' 
+   15  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | awk '{print $3" "$5 "-"$6 " " $7}' 
+   16  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | awk '{print $2" "$5 "-"$6 " " $7}' 
+   17  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | awk '{print $2" "$5 "-"$6 " " $7}' | csvlook
+   18  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | awk $4==[0-9]'{print $2" "$5 "-"$6 " " $7}' | csvlook
+   19  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | awk $4==[0-9] '{print $2" "$5 "-"$6 " " $7}' | csvlook
+   20  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | awk '{print $2" "$5 "-"$6 " " $7}' | csvlook
+   21  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hotel | awk '{print $2" "$5 "-"$6 " " $7}' | csvlook
+   22  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hotel | awk '{print $2" "$6 "-"$6 " " $7}' | csvlook
+   23  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hotel | awk '{print $2 ""$7 " " $8}' | csvlook
+   24  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hotel | awk '{print $2" "$7 " " $8}' | csvlook
+   25  vi ejemplos_filtros.txt 
+   26  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | awk '{print $2" "$5 "-"$6 " " $7}' | csvlook
+   27  vi ejemplos_filtros.txt 
+   28  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep produc | awk '{print $2" "$5 "-"$6 " " $7}' | csvlook [B
+   29  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep produc | awk '{print $2" "$5 "-"$6 " " $7}' | csvlook
+   30  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep produc | awk '{print $2" "$5}' | csvlook
+   31  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep produc | awk '{print $2" "$6}' | csvlook
+   32  vi ejemplos_filtros.txt 
+   33  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep cotizado | awk '{print $2" "$6}' | csvlook 
+   34  vi ejemplos_filtros.txt 
+   35  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep cotizado | awk '{print $2" "$6" "$7}' | csvlook 
+   36  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep cotizado | awk '{print $2" "$6" "$7 " " $8}' | csvlook 
+   37  vi ejemplos_filtros.txt 
+   38  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep cotizado | awk '{print $2" "$6" "$7}' | csvlook 
+   39  vi ejemplos_filtros.txt 
+   40  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep produc | awk '{print $2" "$6" "$7}' | csvlook
+   41* cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep produc | awk '{print $2" "$6" "$8}' | csvlook1
+   42  vi ejemplos_filtros.txt 
+   43  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | awk '{print $2" "$5 "-"$6 " " $7}' | csvlook
+   44  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | awk '{print $2" "$5 "-"$6 " " $7" "$8}' | csvlook
+   45  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | awk '{print $2" "$5 "-"$6 " " $7" "$9}' | csvlook
+   46  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | awk '{print $2" "$5 "-"$6 " " $7" "$10}' | csvlook
+   47  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | awk '{print $2" "$5 "-"$6 " " $7" "$10}' | csvlook
+   48  vi ejemplos_filtros.txt 
+   49  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hotel | awk '{print $2" "$7 " " $8}' | csvlook
+   50  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hotel | awk '{print $2" "$7 " " $8" "$9}' | csvlook
+   51  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hotel | awk '{print $2" "$7 " " $8" "$9" "10}' | csvlook
+   52  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hotel | awk '{print $2" "$7 " " $8" "$9" "$10}' | csvlook
+   53  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hotel | awk '{print $2" "$7 " " $8" "$9}' | csvlook
+   54  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hotel | awk '{print $2" "$7 " " $8" "$9" "$10}' | csvlook
+   55  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hotel | awk '{print $2" "$7 " " $8" "$9" "$11}' | csvlook
+   56  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | awk '{print $2" "$5 "-"$6 " " $7" "$10}' | csvlook
+   57  vi ejemplos_filtros.txt 
+   58  vi filtrador_fecha_aereo.sh 
+   59  vi filtrador_fecha
+   60  vi filtrador_fecha.sh 
+   61  ls -ls
+   62  cat buscador_agencia_od_fecha.txt 
+   63  cat buscador_agy_fecha_destino.txt 
+   64  vi ejemplos_filtros.txt 
+   65  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | grep -E '10-2020' | grep -E BRC|IGR|SLA|CPC|FTE|USH'| awk '{print $2" "$5 "-"$6 " " $7" "$10}' | csvlook
+   66  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | grep -E '10-2020' | grep -E 'BRC|IGR|SLA|CPC|FTE|USH'| awk '{print $2" "$5 "-"$6 " " $7" "$10}' | csvlook
+   67  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | grep -E '11-2020|12-2020' | grep -E 'BRC|IGR|SLA|CPC|FTE|USH'| awk '{print $2" "$5 "-"$6 " " $7" "$10}' | csvlook
+   68  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hotel | grep -E '11-2020|122020' | awk '{print $2" "$7 " " $8" "$9" "$10}' | csvlook
+   69  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hotel | grep -E '11-2020|122020' | awk '{print $2" "$7 " " $8" "$9" "$11}' | csvlook
+   70  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hotel | grep -E '11-2020|12-2020' | awk '{print $2" "$7 " " $8" "$9" "$11}' | csvlook
+   71  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hotel | grep -E '11-2020|12-2020' | awk $11>3 '{print $2" "$7 " " $8" "$9" "$11}' | csvlook
+   72  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hotel | grep -E '11-2020|12-2020' | awk '$11 > 3 {print $2" "$7 " " $8" "$9" "$11}' | csvlook
+   73  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hotel | grep -E '11-2020|12-2020' | awk '$11 > 2 {print $2" "$7 " " $8" "$9" "$11}' | csvlook
+   74  vi ejemplos_filtros.txt  
+   75  vi ejemplos_filtros.txt  
+   76  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | grep -E '11-2020|12-2020' | awk '$11 > 2 {print $2" "$7 " " $8" "$9" "$11}'
+   77  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | grep -E '11-2020|12-2020' | awk '{print $2" "$7 " " $8" "$9" "$11}'
+   78  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | grep -E '11-2020|12-2020' | awk '{print $2" "$5 " " $8" "$9" "$11}'
+   79  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | grep -E '11-2020|12-2020' | awk '{print $2" "$6 " " $8" "$9" "$11}'
+   80  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | grep -E '11-2020|12-2020' | awk '{print $2" "$6 " " $7" "$9" "$11}'
+   81  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | grep -E '11-2020|12-2020' | awk '{print $2" "$6 " " $7" "$9}'
+   82  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | grep -E '11-2020|12-2020' | awk '{print $2" "$6 " " $7" "$10}'
+   83  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | grep -E '11-2020|12-2020' | awk '$10 > 1 {print $2" "$6 " " $7" "$10}' 
+   84  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | grep -E '11-2020|12-2020' | awk '$10 > 1 {print $2" "$5" - " $6 " " $7" "$10}' 
+   85  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | grep -E '11-2020|12-2020' | awk '$10 > 1 {print $2" "$5">" $6 " " $7" "$10}' 
+   86  vi ejemplos_filtros.txt  
+   87  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | awk '$10 > 1 {print $2" "$5">" $6 " " $7" "$10}' 
+   88  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | awk '$10 > 1 {print $2" "$5">" $6 " " $7" "$10}' | csvlook
+   89  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | grep -E '11-2020|12-2020' | awk '$10 > 1 {print $2" "$5">" $6 " " $7" "$10}' 
+   90  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | grep -E '11-2020|12-2020' | awk '$10 > 1 {print $2" "$5">" $6 " " $7" "$10}' 
+   91  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | wc -l
+   92  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | awk '$10 > 1 {print $2" "$5">" $6 " " $7" "$10}' 
+   93  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo 
+   94  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | awk '$10 > 1 {print $2" "$5">" $6 " " $7" "$10}' 
+   95  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | awk '{print $2" "$5">" $6 " " $7" "$10}' 
+   96  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hotel | grep -E '11-2020|12-2020' | awk '$11 > 3 {print $2" "$7 " " $8" "$9" "$11}' | csvlook
+   97  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | grep -E '11-2020|12-2020' | awk '$10 > 1 {print $2" "$5">" $6 " " $7" "$10}' 
+   98  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hotel | grep -E '11-2020|12-2020' | awk '$11 > 3 {print $2" "$7 " " $8" "$9" "$11}' | csvlook
+   99  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep produc | grep -E '11-2020|12-2020' | awk '$11 > 3 {print $2" "$7 " " $8" "$9" "$11}' | csvlook
+  100  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep produc | grep -E '11-2020|12-2020' | awk '$11 > 3 {print $2" "$7}' | csvlook
+  101  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep produc | grep -E '11-2020|12-2020' | awk '$11 > 3 {print $2" "$7}' 
+  102  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep produc | grep -E '11-2020|12-2020' 
+  103  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep cotiza | grep -E '11-2020|12-2020' 
+  104  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' 
+  105  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 print $2" "$5" "$6" "$7" "$9'
+  106  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" "$5" "$6" "$7" "$9}'
+  107  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" "$5" "$6" "$7" "$8}'
+  108  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" "$5" "$6" "$7" "$10}'
+  109  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 
+  110  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 '
+  111  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 '{print $2}
+  112  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2 $5 $6}'
+  113  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2 $5 $6 $7 $9}'
+  114  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2 $5}'
+  115  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" " $6}'
+  116  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" " $6" "$7}'
+  117  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" " $6" "$9
+  118  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" " $6" "$9}
+cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" " $6" "$9}'
+  119  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" " $6" "$9'
+  120  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" " $6" "$9}'
+  121  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | awk '$10 >2 {print $2" " $6" "$9}'
+  122  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | awk '$10 >2 {print $2" " $6" "$7}'
+  123  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | awk '$10 >2 {print $2" " $6" "$7" "$8}'
+  124  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | awk '$10 >2 {print $2" " $6" "$7" "$9}'
+  125  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | awk '$10 >2 {print $2" " $6" "$7" "$10}'
+  126  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | awk '$10 >2 {print $2" " $6" "$7" "$11}'
+  127  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | awk '$10 >2 {print $2" " $6" "$7" "$10}'
+  128  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | awk '$10 >2 
+  129  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | awk '$10 >2 {print $2" " $6" "$7" "$10}'
+  130  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | awk '$10 >2 {print $2" " $6" "$7" "$NF}'
+  131  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel 
+  132  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | cut -d = -f1
+  133  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | cut -d = -f2
+  134  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | cut -d = -f3
+  135  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | cut -d = -f4
+  136  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | cut -d = -f5
+  137  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | cut -d = -f6
+  138  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | cut -d = -f7
+  139  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel 
+  140  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel 
+  141  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | sed  's/adultos=.{120}/ /g' 
+  142  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | sed  's/adultos=.{120}/ /g' | wc -l
+  143  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | sed  's/adultos=.{120}/ /g' | tail
+  144  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | sed  's/adultos=.{120}//g' | tail
+  145  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | sed  's/adultos=.{120}/ /g' | tail
+  146  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | sed  's/adultos=/ /g' | tail
+  147  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | sed  's/adultos=../ /g' | tail
+  148  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | sed  's/adultos=..(\N\120)/ /g' | tail
+  149  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep adulto
+  150* cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | 
+  151  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | awk '$10 >2 {print $2" " $6" "$7" "$10}'
+  152  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | awk '$10 >2 {print $2" " $6" "$7" "$9}'
+  153  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep adulto
+  154  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep adulto | wc -l
+  155  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" " $6" "$9'
+  156  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" "$5" "$6" "$7" "$10}'
+  157  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" "$5" "$6" "$7" "$9}'
+  158  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" "$5" "$6" "$7" "$11}'
+  159  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" "$5" "$6" "$7" "$12}'
+  160  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" "$5" "$6" "$7" "$13}'
+  161  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" "$5" "$6" "$7" "$14}'
+  162  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" "$5" "$6" "$7" "$15}'
+  163  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" "$5" "$6" "$7" "$16}'
+  164  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" "$5" "$6" "$7" "$17}'
+  165  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" "$5" "$6" "$7" "$18}'
+  166  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" "$5" "$6" "$7" "$19}'
+  167  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" "$5" "$6" "$7" "$15}'
+  168  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" "$5" "$6" "$7" "$16}'
+  169  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" "$5" "$6" "$7" "$13}'
+  170  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" "$5" "$6" "$7" "$12}'
+  171  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" "$5" "$6" "$7" "$11}'
+  172  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" "$5" "$6" "$7" "$10}'
+  173  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" "$5" "$6" "$7" "$10}'
+  174  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" "$5" "$6" "$7" "$11}'
+  175  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" "$5" "$6" "$7" "$12}'
+  176  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" "$5" "$6" "$7" "$13}'
+  177  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" "$5" "$6" "$7" "$14}'
+  178  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 {print $2" "$5" "$6" "$7" "$15}'
+  179  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 && $15 => {print $2" "$5" "$6" "$7" "$15}'
+  180  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 && $15 =>1 {print $2" "$5" "$6" "$7" "$15}'
+  181  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 & $15 =>1 {print $2" "$5" "$6" "$7" "$15}'
+  182  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 & $15 >= 1 {print $2" "$5" "$6" "$7" "$15}'
+  183  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 && $15 > 1 {print $2" "$5" "$6" "$7" "$15}'
+  184  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 && $15 => 1 {print $2" "$5" "$6" "$7" "$15}'
+  185  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 && $15 >= 1 {print $2" "$5" "$6" "$7" "$15}'
+  186  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '11-2020|12-2020' | awk '$10 >2 && $15 >= 1 {print $2" "$5" "$6" "$7" "$10" "$15}'
+  187  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '20201' | awk '$10 >2 && $15 >= 1 {print $2" "$5" "$6" "$7" "$10" "$15}'
+  188  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '2021' | awk '$10 >2 && $15 >= 1 {print $2" "$5" "$6" "$7" "$10" "$15}'
+  189  vi ejemplos_filtros.txt  
+  190  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep -E '2020' | awk '$10 >2 && $15 >= 1 {print $2" "$5" "$6" "$7" "$10" "$15}'
+  191  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | grep 2020 | awk '$10 >2 && $15 >= 1 {print $2" "$5" "$6" "$7" "$10" "$15}'
+  192  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201027-20201027.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | awk '$10 >2 && $15 >= 1 {print $2" "$5" "$6" "$7" "$10" "$15}'
+  193  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201026-20201026.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | awk '$10 >2 && $15 >= 1 {print $2" "$5" "$6" "$7" "$10" "$15}'
+  194  ls -ls
+  195  cat OSEMN.txt 
+  196  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | awk '$10 >2 && $15 >= 1 {print $2" "$5" "$6" "$7" "$10" "$15}'
+  197  vi atajos_de_teclado.txt
+  198  vi atajos_de_teclado.txt
+  199  cat atajos_de_teclado.txt 
+  200  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | awk '$10 >2 && $15 >= 1 {print $2" "$5" "$6" "$7" "$10" "$15}'
+  201  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | wc -l
+  202  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel 
+  203  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | awk {print $3}
+  204  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | awk '{print $3}¡
+  205  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | awk '{print $3}'
+  206  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | awk '{print $4" "$5}'
+  207  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | awk '{print $2" "$6" "7}'
+  208  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | awk '{print $2" "$6" "8}'
+  209  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | awk '{print $2" "$6" "9}'
+  210  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | cut -d ' ' -f2
+  211  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | cut -d ' ' -f3
+  212  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | cut -d ' ' -f3 | sort | uniq -c | sort
+  213  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | cut -d ' ' -f5 | sort | uniq -c | sort
+  214  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | cut -d ' ' -f6 | sort | uniq -c | sort
+  215  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuel | cut -d ' ' -f7 | sort | uniq -c | sort
+  216  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hotel | cut -d ' ' -f6 | sort | uniq -c | sort
+  217  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hotel | cut -d ' ' -f7 | sort | uniq -c | sort
+  218  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hotel | cut -d ' ' -f8 | sort | uniq -c | sort
+  219  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep cotiz | cut -d ' ' -f8 | sort | uniq -c | sort
+  220  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep cotiz | cut -d ' ' -f7 | sort | uniq -c | sort
+  221  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep cotiz | cut -d ' ' -f7,8 | sort | uniq -c | sort
+  222  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep cotiz | cut -d ' ' -f7,8,9 | sort | uniq -c | sort
+  223  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep cotiz | grep -E '11|12-2020' | cut -d ' ' -f7,8,9 | sort | uniq -c | sort
+  224  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep cotiz | grep -E '11|12-2020' | cut -d ' ' -f3,7,8,9 | sort | uniq -c | sort
+  225  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep cotiz | grep -E '11|12-2020' | cut -d ' ' -f3,7,8,9 | sort | uniq -c | sort | csvlook
+  226  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hote | grep -E '11|12-2020' | cut -d ' ' -f3,7 | sort | uniq -c | sort | csvlook
+  227  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hote | grep -E '11|12-2020' | cut -d ' ' -f3,7 | sort | uniq -c | sort 
+  228  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hote | grep -E '11|12-2020' | cut -d ' ' -f3,8 | sort | uniq -c | sort 
+  229  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hote | grep -E '11|12-2020' | cut -d ' ' -f3,8 | sort | uniq -c | sort | csvlook
+  230  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hote | grep -E '11|12-2020' | cut -d ' ' -f3,8 | sort | uniq -c | sort 
+  231  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | cut -d ' ' -f4 | sort | uniq -c | sort 
+  232  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | head
+  233  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | tail
+  234  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | head
+  235  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | sed -n '6,680d'
+  236  ls
+  237  cat filtro_agencia_vertical.txt 
+  238  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | sed -n 6,680d
+  239  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | sed -n 6,680p
+  240  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | sed -n 6,675p
+  241  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | sed -n 6,675p | tail
+  242  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | sed -n 6,675p | head
+  243  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | wc -l
+  244  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | sed -n 7,510p | tail
+  245  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | sed -n 7,509p | tail
+  246* cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | sed -n 7,509p | head | 
+  247  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | sed -n 7,509p | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hote | grep -E '11|12-2020' | cut -d ' ' -f3,8 | sort | uniq -c | sort | csvlook
+  248  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | sed -n 7,509p | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep hote | grep -E '11|12-2020' | cut -d ' ' -f3,8 | sort | uniq -c | sort 
+  249  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | sed -n 7,509p | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | cut -d ' ' -f4
+  250  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | sed -n 7,509p | tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | cut -d ' ' -f4 | sort | uniq -c | sort
+  251  cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201028-20201028.csv | sed -n 7,509p | tr '/' ' '| cut -d ' ' -f4 | sort | uniq -c | sort
+  252  history
+  253  history > history_29oct2020.txt

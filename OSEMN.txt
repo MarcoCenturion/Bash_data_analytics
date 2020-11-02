@@ -1,0 +1,11 @@
+OSEMN
+
+1- obtener los datos
+	Armarmos un script para utilizar CUT, GREP, WC, CAT, TAIL, HEAD
+
+2- limpiar, eliminar columnas, datos invalidos, renglones, etc
+	mostrar linesas puntuales con AWK lines awk '(NR>=4)&&(NR<=6)'
+	GREP: Archivo de texto grep -i chapter alice.txt (muestra las palabras chapter ignorando case sensitive)
+	comandos SAMPLE y JC 
+3- 
+

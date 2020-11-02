@@ -1,0 +1,2 @@
+cat 191020.csv | sed -n '7,552p' | tr '/' ' ' | cut -d ' ' -f3,4 | sort | uniq -c | sort
+

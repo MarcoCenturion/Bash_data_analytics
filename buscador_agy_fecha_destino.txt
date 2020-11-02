@@ -1,0 +1,1 @@
+grep -E 'BRC|IGR|MDQ|FTE|USH|CPC' | grep -E '10-2020|11-2020' | sed -n 7,288p | cut -d '/' -f 3,6,7,8 | tr '/' ' ' | csvlook
