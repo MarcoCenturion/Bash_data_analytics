@@ -1,0 +1,1 @@
+cat Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201019-20201019.csv | sed -n '7,254p' | tr '[:lower:]' '[:upper:]' | cut -d '/' -f3,6,7,8 | tr '/' ' ' | grep -E '[A-Z]{3}' | cut -d ',' -f1 | sort | uniq -c | sort | awk '{print $1", "$2", " $3", "$4", "$5  } ' | csvlook

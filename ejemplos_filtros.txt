@@ -15,10 +15,6 @@ http://persoal.citius.usc.es/tf.pena/ASR/Tema_2html/node23.html
 # manual on line vim
 https://www.tutorialspoint.com/unix/unix-vi-editor.htm
 
-# Expresiones regulares en Bash 
-https://developer.ibm.com/es/tutorials/l-lpic1-v3-103-7/
-
-
 # filtro vuelos con awk
 tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | awk '/vuelos/ {print "Origen " $5" Destino "$6" Fecha "$7" Repeticion " $10 }
 

@@ -1,0 +1,1 @@
+ed -n 7,577p |tr '/' ' ' | cut -d ' ' -f3,4 | cut -d ',' -f1 | sort | uniq -c | sort | tail -n 40
