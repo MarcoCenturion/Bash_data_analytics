@@ -48,3 +48,9 @@ tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | grep vuelo | grep -E '11-202
 
 # doble filtro con awk vuelos
 awk '$10 >2 && $15 >= 1 {print $2" "$5" "$6}
+
+# filtro cut para el campo tabulador
+cut -f7 -d$'\t'
+
+
+
