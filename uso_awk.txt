@@ -22,4 +22,11 @@ history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
 # Nada que ver con esto, Caesar cipher con tr
 Encripar tr '[A-Za-z]' '[N-ZA-Mn-za-m]' / Desencriptar tr '[N-ZA-Mn-za-m]' '[A-Za-z]'
 
+#sumar los bits del comando ls si la hora es mayor a 23
+ls -l | awk '$8 >= "23" { sum += $5 } END { print sum }'
 
+#filtrar un archivo y con AWK y sumar la columna interacciones para sacar un total de veces que se buscó un destino
+Vuelos
+cat 02-08NOV2020.csv | sed -n '8,4124p' | tr '?' ' ' | tr '/' ' ' | tr ',' ' ' | tr ' " ' ' ' | grep vuel | awk '$6=="CUN" { sum += $10 } END { print sum }'
+
+Hoteles 
