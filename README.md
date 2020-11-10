@@ -26,4 +26,6 @@ sed -n '8,155p'
 
 eliminamos las primera ocho líneas y de 200 las ultimas 5
 
- 
+**Filtrador hotel por mes**
+Agregamos una expresion regular para buscar un mes o meses
+grep -E '(11|12)-2020'
