@@ -5,7 +5,7 @@ tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | awk '/product/ {print $2" " 
 # Agencia, vuelo, fecha
 
 # IBM 
-
+https://www.ibm.com/developerworks/aix/tutorials/au-unixtips3/index.html
 https://developer.ibm.com/technologies/systems/articles/au-unixtext/
 
 # Manupulacion de textos en espaol
