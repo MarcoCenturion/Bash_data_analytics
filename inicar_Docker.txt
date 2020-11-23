@@ -1,1 +1,9 @@
 sudo docker run -it -v /home/marco/Compartida:/Bash_data_analytics datascienceworkshops/data-science-at-the-command-line
+
+para entrar desde la notebook cambiar la carpeta /run/media/marco/CDDDD/Bash
+
+sudo docker run -it -v /home/marco:/Bash_data_analytics jupyter/datascience-notebook
+
+
+sudo docker run -it -v /run/media/marco/CAC5-0DAB/Bash_data_analytics:/Bash_data_analytics jupyter/datascience-notebook
+
