@@ -1,6 +1,8 @@
 # Filtro agencia, producto, frecuencia, limpieza de separadores ? / ,
-
 tr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | awk '/product/ {print $2" " $6 " "$9} '
+
+#agrupar tr
+tr '/|?|,|=' ' '
 
 # Agencia, vuelo, fecha
 
