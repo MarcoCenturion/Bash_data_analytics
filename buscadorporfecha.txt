@@ -1,1 +1,3 @@
-nalytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201015-20201015.csv | sed -n 7,288p | cut -d '/' -f 3,7,8 | tr '/' ' ' | csvlook
+
+
+ | sed -n 7,288p | cut -d '/' -f 3,7,8 | tr '/' ' ' | csvlook
