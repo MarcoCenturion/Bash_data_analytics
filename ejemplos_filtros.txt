@@ -10,7 +10,7 @@ tr '/|?|,|=' ' '
 https://www.ibm.com/developerworks/aix/tutorials/au-unixtips3/index.html
 https://developer.ibm.com/technologies/systems/articles/au-unixtext/
 
-# Manupulacion de textos en espaol
+# Manupulacion de textos en español
 
 http://persoal.citius.usc.es/tf.pena/ASR/Tema_2html/node23.html
 
