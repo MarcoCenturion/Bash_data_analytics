@@ -1,0 +1,17 @@
+<t t-name="website.resultado-vuelos">
+    <script type="text/javascript" src="https://b2c.delfos.tur.ar/v2/modules/buscador/script.js" id="widget_script"></script>
+
+    <t t-call="website.layout">
+      <div id="buscador-vuelos"></div>
+        <script type="text/javascript">
+                                Delfos.Widget.crear("buscador-vuelos",{
+                                codigo_agencia: "marcocenturion",
+                                tipo_buscador: "resultados_vuelos",
+                                      params: {
+                                      url_resultados: "https://thconsultora.com.ar/resultados#"
+                                      }
+                                });
+                            </script>
+        <div id="wrap" class="oe_structure oe_empty"/>
+    </t>
+</t>
