@@ -1,6 +1,6 @@
 import sys
 
-CostoNoche = 33
+CostoNoche = 48
 DesayunoNoche = 14 
 PaseoVelero = 20
 DolarOficial = 95
@@ -10,33 +10,28 @@ AlquilerLancha3hs = 50
 ExpensasXSemana = 245
 IntercambioNacional = 240
 IntercambioInternacional = 369
-Categorias = ['silver','gold','platinum']
 Semanas = [1,2,3,4]
 Years = [1,3,5]
 
-## Costos
-
-SemanaSilver=(CostoNoche*7)*1.33
-SemanaGold=(CostoNoche*7)*1.07+(DesayunoNoche*7)
-SemanaPlatinum=(CostoNoche*7)+(DesayunoNoche*7)+AlquilerLancha3hs
-
-print("Silver: USD"+str(SemanaSilver)+" ARS"+str(int(SemanaSilver*DolarBlue)))
-print("Gold: USD"+str(SemanaGold)+" ARS"+str(int(SemanaGold*DolarBlue)))
-print("Platinum: USD"+str(SemanaPlatinum)+" ARS"+str(int(SemanaPlatinum*DolarBlue)))
-
-
 for i in Years:
     for t in Semanas:
-        precio=(i*SemanaSilver)*t
-        print("Silver "+str(int(t))+" Semanas s/des ni RCI")
-        print("El precio para " +str(i)+" años es Dólares: USD" +str(int(precio))+
-            " = en pesos: ARS"+str(int(precio*DolarBlue))+"\n")
+            precio=(i*(CostoNoche)*7)*t
+            print("Y"+str(int(i))+"W"+str(int(t))+"\tUSD "
+                +str(int(precio))+"\tARS "+str(int(precio*DolarBlue))+"\n"
+                +" Ant ARS "+str((int(precio*DolarBlue)*.25))
+                +" + 12 c ARS "+str((int(precio*DolarBlue)*.75)/12))
     exit
 exit
 
+print("\n------------------\nCon un costo por noche de USD"
+    +str(CostoNoche)+"\nExpensas de USD35 por noche total por noche ARS"
+    +str(int(35*DolarBlue)+(CostoNoche)*DolarBlue))
+
+
+'''
 for i in Years:
     for t in Semanas:
-        precio=(i*SemanaGold)*t
+        precio=(i*Gol)*t
         print("Gold "+str(int(t))+" Semanas c/Desay + RCI + 15 off gastronomia")
         print("El precio para " +str(i)+" años es Dólares: USD" +str(int(precio))+
             " = en pesos: ARS"+str(int(precio*DolarBlue))+"\n")
@@ -45,9 +40,9 @@ exit
 
 for i in Years:
     for t in Semanas:
-        precio=(i*SemanaPlatinum)*t
+        precio=(i*Pla)*t
         print("Platinum "+str(int(t))+" Semanas C/des + RCI + Velero + Lancha + 30 off gastronomia")
         print("El precio para " +str(i)+" años es Dólares: USD" +str(int(precio))+
             " = en pesos: ARS"+str(int(precio*DolarBlue))+"\n")
     exit
-exit
+exit'''
