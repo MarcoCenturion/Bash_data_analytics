@@ -1,10 +1,10 @@
 import sys
 
-CostoNoche = 48
+CostoNoche = 80
 DesayunoNoche = 14 
 PaseoVelero = 20
 DolarOficial = 95
-DolarBlue = 141
+DolarBlue = 140
 AlquilerVelero6hs = 50
 AlquilerLancha3hs = 50
 ExpensasXSemana = 245
@@ -16,10 +16,11 @@ Years = [1,3,5]
 for i in Years:
     for t in Semanas:
             precio=(i*(CostoNoche)*7)*t
-            print("Y"+str(int(i))+"W"+str(int(t))+"\tUSD "
-                +str(int(precio))+"\tARS "+str(int(precio*DolarBlue))+"\n"
-                +" Ant ARS "+str((int(precio*DolarBlue)*.25))
+            print("Y"+str(int(i))+"W"+str(int(t))+" | \tUSD "
+                +str(int(precio))+"\tARS "+str(int(precio*DolarBlue))+"\t"
+                +"| Anticipo 25% ARS "+str((int(precio*DolarBlue)*.25))
                 +" + 12 c ARS "+str((int(precio*DolarBlue)*.75)/12))
+            print('\n')
     exit
 exit
 
