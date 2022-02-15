@@ -64,6 +64,7 @@ grep -E '[0-9]{2} [0-9]{2}' // dos dígitos espacio dos dígitos
 awk -F"/" ' NR==1,NR==10{ print $1, $2, $3 } '
 
 **Contando las busquedas por mes**
+
 cat ~/Descargas/Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFOS\ 20201117-20201117\(1\).csv | sed '1,6d' | tr '[:lower:]' '[:upper:]' | cut -d '/' -f8 | grep -E '{3,5}' | cut -d '-' -f2 | sort | uniq -c | sort | grep -E '[0-9]{2  } [0-9]{2}' | awk '{print $1", "$2}'                                              
 13, 06
 21, 05
@@ -73,7 +74,3 @@ cat ~/Descargas/Analytics\ Vista\ de\ Usuarios\ Vuelos\ por\ agencia\ sin\ DELFO
 96, 03
 100, 12
 125, 01
-
-
-
-
