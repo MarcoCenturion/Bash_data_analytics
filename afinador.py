@@ -1,5 +1,3 @@
-__author__ = 'Daniel'
-
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
