@@ -131,7 +131,7 @@ def iniciar(self):
                             self.canciones = []
                             self.ruta = ""
                             self.estado = False
-                            self.ruta = sg.popup_get_file(title='Seleccionar Cancion', message="Cancion", file_types=(("MP3 Files", "*.mp3"),("OGG Files", "*.ogg"),)))
+                            self.ruta = sg.popup_get_file(title='Seleccionar Cancion', message="Cancion", file_types=(("MP3 Files", "*.mp3"),("OGG Files", "*.ogg"),))
                                 #self.nombre_cancion.update(self.ruta)
                             print(self.ruta)
                             self.cargar_cancion_unica(self.ruta)

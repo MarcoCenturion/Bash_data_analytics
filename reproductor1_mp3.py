@@ -1,4 +1,4 @@
-Pimport PySimpleGUI as sg
+import PySimpleGUI as sg
 import os
 from tinytag import TinyTag
 import pygame
