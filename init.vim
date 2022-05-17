@@ -3,9 +3,14 @@ set mouse=a
 syntax enable
 set showcmd
 set encoding=utf-8
-set showmatch 
+set showmatch
+set inccommand=split
 set relativenumber
 set clipboard=unnamed
+set wrap
+set colorcolumn=80
+set guicursor=a:block
+set linebreak
 
 call plug#begin('~/.vim/plugged')
 
@@ -27,7 +32,6 @@ Plug 'mechatroner/rainbow_csv'
 
 " Plugin para markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-
 
 Plug 'Valloric/YouCompleteMe'
 Plug 'vim-syntastic/syntastic'
@@ -55,7 +59,7 @@ let g:airline#extensions#tabline#enabled = 1
 let NERDTreeQuitOnOpen=1
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 nnoremap <silent> <F3> :NERDTreeTogle<CR>
-
+nnoremap <silent> <F5> :!python %:p<CR>
 
 " Configuracion COC
 
@@ -126,8 +130,6 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
   elseif (coc#rpc#ready())
     call CocActionAsync('doHover')
   else
@@ -218,6 +220,8 @@ nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols.
 nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
+nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
 nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
@@ -315,6 +319,6 @@ let g:mkdp_page_title = '「${name}」'
 " these filetypes will have MarkdownPreview... commands
 let g:mkdp_filetypes = ['markdown']
 
-
+runtime mappings.vim
 
 
