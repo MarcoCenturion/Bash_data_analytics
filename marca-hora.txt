@@ -1,0 +1,8 @@
+Comando Linux para dejar grabada una marca temporal
+
+# Declaramos la variable
+now=$(date +"%a: %d-%m-%y| %H:%m")
+
+# pegamos el dato en Nvim
+:r !echo $now
+
