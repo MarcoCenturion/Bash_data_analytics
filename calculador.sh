@@ -1,5 +1,6 @@
 #!/bin/bash
 
+now=$(date +"%d-%m-%y  %m:%S")
 echo 'valor coinnomi1'
 read coinnomi1
 echo 'valor coinnomi2'
@@ -12,5 +13,5 @@ echo 'valor blue'
 read blue
 # total=$(((($connomi1+$coinnomi2)*$blue)+$bitripio+$ethripio))
 
-echo "total \n-------" 
+echo "total \n-------\n$now"" 
 echo $(($coinnomi1 + $coinnomi2)) * $blue + $(($bitriip + $ethripio)) | bc 
