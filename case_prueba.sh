@@ -14,15 +14,15 @@ turquoiseColour="\e[0;36m\033[1m"
 grayColour="\e[0;37m\033[1m"
 blueColour="\e[0;34m\033[1m"
 
-now=$(date +"%d-%m-%y  %m:%S")
+now=$(date +"%d-%m-%y  %H:%M")
 
 clear
 echo -ne "\n${greenColour}Ingresar el valor del dolarblue: ${endColour}" 
 read dolarblue
 echo -ne "\n${blueColour}------------------------------${endColour}"
-echo "Esta cotización es del día: $now"
-echo "El valor ingresado es: $dolarbue"
-echo -ne "Markup por tkt " 
+echo -ne "\n${greenColour}Esta cotización es del día: $now${endColour}"
+echo -ne "\n${greenColour}El valor ingresado es: $dolarbue ${endColour}"
+echo -ne "\n${greenColour}Indicar el Markup por tkt :${endColour}" 
 read markup
 
 function ruta(){
