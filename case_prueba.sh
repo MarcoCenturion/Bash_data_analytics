@@ -12,15 +12,17 @@ yellowColour="\e[0;33m\033[1m"
 purpleColour="\e[0;35m\033[1m"
 turquoiseColour="\e[0;36m\033[1m"
 grayColour="\e[0;37m\033[1m"
+blueColour="\e[0;34m\033[1m"
 
 now=$(date +"%d-%m-%y  %m:%S")
+
 clear
 echo -ne "\n${greenColour}Ingresar el valor del dolarblue: ${endColour}" 
 read dolarblue
-echo -e "${blueColour}------------------------------${endColour}"
+echo -ne "\n${blueColour}------------------------------${endColour}"
 echo "Esta cotización es del día: $now"
 echo "El valor ingresado es: $dolarbue"
-echo -ne "Markup por tkt" 
+echo -ne "Markup por tkt " 
 read markup
 
 function ruta(){
@@ -46,3 +48,6 @@ echo -en "\n${blueColour}Equipaje Permitido :${endColour}"
 echo -e "${redColour}$equipaje${endColour}"
 echo -en "\n${blueColour}Tarifa en Pesos Total por pasajero : ARS${endColour}"
 echo -e "${redColour}$(($tarifa+$markup))${endColour}"
+echo -en "\n${blueColour}Tarifa en Dolares total por pasajero : USD${endColour}"
+echo -e "${redColour}$((($tarifa+$markup)/$dolarblue))${endColour}"
+
