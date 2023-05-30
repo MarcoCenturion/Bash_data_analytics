@@ -22,7 +22,7 @@ read dolarblue
 echo -ne "\n${blueColour}------------------------------${endColour}"
 echo -ne "\n${greenColour}Esta cotización es del día: $now${endColour}"
 echo -ne "\n${greenColour}El valor ingresado es: $dolarbue ${endColour}"
-echo -ne "\n${greenColour}Indicar el Markup por tkt :${endColour}" 
+echo -ne "\n${greenColour}Indicar el Markup por tkt: ${endColour}" 
 read markup
 
 function ruta(){
@@ -36,7 +36,7 @@ tarifa=$(cat pnr.txt | grep -e '^ARS' | tail -1 | awk '{print $1}' | sed 's/ARS/
 clear
 
 echo -e "\n${blueColour}\n----------------------------------${endColour}"
-echo -en "\n${blueColour}\nFecha de Cotización Emitida : ${endColour}"
+echo -en "\n${blueColour}\nFecha de Cotización Emitida: ${endColour}"
 echo -e "${redColour}$now${endColour}"
 echo -en "\n${blueColours}Ultimo día para emitir: ${endColour}"
 echo -e "${redColour}$ltd${endColour}"
@@ -44,10 +44,9 @@ echo -en "\n${blueColour}Importe en USD sin TAX:  ${endColour}"
 echo -e "${redColour}$tarifa_usd${endColour}"
 echo -e "\n${blueColour}Cía|Vuelo|Fecha|Ruta|Sale|Llega${endColour}"
 echo -e "${redColour}$tramos${endColour}"
-echo -en "\n${blueColour}Equipaje Permitido :${endColour}"
+echo -en "\n${blueColour}Equipaje Permitido: ${endColour}"
 echo -e "${redColour}$equipaje${endColour}"
-echo -en "\n${blueColour}Tarifa en Pesos Total por pasajero : ARS${endColour}"
+echo -en "\n${blueColour}Tarifa en Pesos Total por pasajero: ARS ${endColour}"
 echo -e "${redColour}$(($tarifa+$markup))${endColour}"
-echo -en "\n${blueColour}Tarifa en Dolares total por pasajero : USD${endColour}"
+echo -en "\n${blueColour}Tarifa en Dolares total por pasajero: USD ${endColour}"
 echo -e "${redColour}$((($tarifa+$markup)/$dolarblue))${endColour}"
-
