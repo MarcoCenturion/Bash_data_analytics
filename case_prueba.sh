@@ -6,6 +6,11 @@
 # (c) Marco Centurion
 # -------------------------------------
 
+if [[ -f $1 ]]
+then
+	echo "Leyendo el archivo "$1
+	sleep 1 
+
 greenColour="\e[0;32m\033[1m"
 endColour="\033[0m\e[0m"
 yellowColour="\e[0;33m\033[1m"
@@ -26,13 +31,14 @@ echo -ne "\n${greenColour}Indicar el Markup por tkt: ${endColour}"
 read markup
 
 function ruta(){
-	cat pnr.txt | grep 
+	cat $1 | grep 
 }
-ltd=$(cat pnr.txt | grep LAST | awk -F '-' '{print $1}')
-tarifa_usd=$(cat pnr.txt | grep USD | awk 'NR == 1 {print $2}')
-equipaje=$(cat pnr.txt | grep -E '2P|1P|0P'|awk '{print $10}')
-tramos=$(cat pnr.txt | grep -e '^  [1-9]'|cut -c 6-12,15-20,23-29,35-43 | tr '\n' '\t\t')
-tarifa=$(cat pnr.txt | grep -e '^ARS' | tail -1 | awk '{print $1}' | sed 's/ARS//' | awk -F . '{print $1}')
+
+ltd=$(cat $1 | grep LAST | awk -F '-' '{print $1}')
+tarifa_usd=$(cat $1 | grep USD | awk 'NR == 1 {print $2}')
+equipaje=$(cat $1 | grep -E '2P|1P|0P'|awk '{print $10}')
+tramos=$(cat $1 | grep -e '^  [1-9]'|cut -c 6-12,15-20,23-29,35-43 | awk '{print $0}')
+tarifa=$(cat $1 | grep -e '^ARS' | tail -1 | awk '{print $1}' | sed 's/ARS//' | awk -F . '{print $1}')
 clear
 
 echo -e "\n${blueColour}\n----------------------------------${endColour}"
@@ -50,3 +56,7 @@ echo -en "\n${blueColour}Tarifa en Pesos Total por pasajero: ARS ${endColour}"
 echo -e "${redColour}$(($tarifa+$markup))${endColour}"
 echo -en "\n${blueColour}Tarifa en Dolares total por pasajero: USD ${endColour}"
 echo -e "${redColour}$((($tarifa+$markup)/$dolarblue))${endColour}"
+
+else
+	echo "El archivo" $1 "no fue encontrado"
+fi
