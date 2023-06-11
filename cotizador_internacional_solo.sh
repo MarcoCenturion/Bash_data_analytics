@@ -1,5 +1,5 @@
 #!/bin/bash 
-#
+##################### COTIZADOR_INTERNACIONAL_SOLO.SH
 # Aprendiendo a usar sed, cat, awk, cut
 # (c) Marco Centurion
 # -------------------------------------
