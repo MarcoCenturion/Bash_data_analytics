@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash -x 
 ##########################  LEER_PORTAPAPELES.SH
 # leer con xclip el portapapeles
 # y pegarlo en una variable
