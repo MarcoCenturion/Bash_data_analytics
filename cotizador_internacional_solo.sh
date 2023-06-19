@@ -2,6 +2,7 @@
 ##################### COTIZADOR_INTERNACIONAL_SOLO.SH
 # Aprendiendo a usar sed, cat, awk, cut
 # (c) Marco Centurion
+# Primer argumento arhivo txt segundo argumento markupk tercero dolarblue
 # -------------------------------------
 
 # Grabamos los colores de Savitar
@@ -13,6 +14,14 @@ turquoiseColour="\e[0;36m\033[1m"
 grayColour="\e[0;37m\033[1m"
 blueColour="\e[0;34m\033[1m"
 # Establecemos la fecha en la variable now
+function copiarpnr(){
+	pnr=$(xclip -i)
+	echo $pnr
+	xclip -o > pnr.txt
+}
+
+copiarpnr
+
 now=$(date +"%d-%m-%y  %H:%M")
 
 if [[ -f $1 ]]  # Validamos que el usuario agregue un argumento, el archivo .txt con los datos del PNR
@@ -21,13 +30,14 @@ then
 	sleep 1 
 clear
 # Ingresamos el valor del dolar y el Markup
-echo -ne "\n${greenColour}Ingresar el valor del dolarblue: ${endColour}" 
-read dolarblue
 echo -ne "\n${blueColour}------------------------------${endColour}"
 echo -ne "\n${greenColour}Esta cotización es del día: $now${endColour}"
-echo -ne "\n${greenColour}El valor ingresado es: $dolarbue ${endColour}"
-echo -ne "\n${greenColour}Indicar el Markup por tkt: ${endColour}" 
-read markup
+echo -ne "\n${greenColour}El valor del Markup es: $i ${endColour}"
+echo -ne "\n${greenColour}El valor del Dolar Blue es: $2 ${endColour}"
+
+dolarblue=$2
+
+markup=$2
 
 # Parseamos el documento txt en cada una de las variables que 
 # utilizaremos para hacer la cotización
