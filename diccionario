@@ -1,0 +1,21 @@
+aeropuertos = {
+    "AEP": "Aeroparque Buenos Aires",
+    "EZE": "Ezeiza Buenos Aires,"" 
+    "MAD": "Madrid",
+    "BCN": "Barcelona",
+    "MIA": "Miami",
+    "JFK": "John F. Kenedy New York",
+    "LGA": "La Guardia New York",
+    "EWR": "Newark New York",
+    "COR": "Córdoba",
+    "PTY": "Panamá",
+    "MEX": "México DF",
+    "CUN": "Cancún",
+    "PUJ": "Punta Cana",
+    "GIG": "El Galeo Rìo de Janeiro",
+    "GRU": "Guarulhos Sao Paulo",
+    "SDU": "Santos Dumont Rio de Janeiro",
+    "POA": "Porto Allegre",
+    "SCL": "Santiago de Chile",
+    "LIM": "Lima Per"ù
+}
