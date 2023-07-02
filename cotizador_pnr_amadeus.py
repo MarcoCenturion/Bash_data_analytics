@@ -60,6 +60,7 @@ aeropuertos = {
     "SDU": "Santos Dumont Rio de Janeiro",
     "POA": "Porto Allegre",
     "SCL": "Santiago de Chile",
+    "BUE": "Buenos Aires",
     "SYD": "Sydney",
     "LIM": "Lima Perù"
 }
@@ -98,14 +99,6 @@ devoluciones = {
     "NON-END": "No permite devoluciones ni cambios"
 }
 
-# Importamos la librería RE, definimos un fee por defecto
-# y preguntamos al usuario si quiere cambiarlo
-import re
-fee = 46000
-fee = input("\n-------------------------------------\nDefinir fee en ARS oficial\nPor defecto es ARS46000: ")
-blue = input("\n-------------------------------------\nIndicar el tipo de cambio blue Vendedor: ")
-ventausd = input("\n----------------------------------\nIndicar el precio en USD emitiendo en MIA: ")
-
 # Abrimos el archivo pnr.txt en modo lectura solament
 # lo leemos
 # con print nos aseugramos de ver el contenido
@@ -113,65 +106,75 @@ ventausd = input("\n----------------------------------\nIndicar el precio en USD
 tst = '''
 
 
-FXZ
-
-01 P1
-SELECTED RECOMMENDATION SUCCESSFULLY BOOKED
-LAST TKT DTE 04JUL23 - SEE ADV PURCHASE
-------------------------------------------------------------
-     AL FLGT  BK T DATE  TIME  FARE BASIS      NVB  NVA   BG
- BUE
- BCN IB  2602 S  S 18FEB 1300  SNL3NOGZ        18FEB18FEB 0P
-
-USD   601.00      18FEB24BUE IB BCN Q14.00
-ARS161068.00      587.00NUC601.00END ROE1.000000
-ARS 11274.80AR    XT ARS 72480.60Q1 ARS 2680.00QO ARS
-ARS 48320.40O5    40267.00S5 ARS 375.20S7 ARS 2144.00TQ ARS
-ARS133222.80XT    15276.00XR
-ARS353886.00
-RATE USED 1USD=268.0000000ARS
-FARE FAMILIES:    (ENTER FQFn FOR DETAILS, FXY FOR UPSELL)
-FARE FAMILY:FC1:1:BASIC
-NO BAG INCLUDED FOR AT LEAST ONE FLIGHT
-TICKET STOCK RESTRICTION
->                                                 PAGE  1/ 2
-
->
-
-m
-
-BG CXR: IB
-PRICED WITH VALIDATING CARRIER IB - REPRICE IF DIFFERENT VC
-NON-REFUNDABLE
->                                                 PAGE  2/ 2
-
->
-
-rt
-
+--- MSC ---
 RP/CORG121EU/
-  1  IB2602 S 18FEB 7 EZEBCN DK1  1300 0530  19FEB  E  0 332 G
-     OPERATED BY SUBSIDIARY/FRANCHISE
+  1  LA 491 Q 12MAR 2*CORSCL DK1  1239 1409  12MAR  E  0 320 S
+     101 WPRYBHKMLVXSNQOGTAE
+     SEE RTSVC
+  2  LA 706 Q 12MAR 2*SCLMAD DK1  2120 1420  13MAR  E  0 789 DB
+     010 IB 7109
+     SEE RTSVC
+  3  LA 715 Q 13APR 6*MADSCL DK1  2340 1005  14APR  E  1 789 B
+     SEE RTSVC
+  4  LA 486 Q 14APR 7*SCLCOR DK1  1515 1746  14APR  E  0 320 S
+     010 IB 7108
+     101 WPRYBHKMLVXSNQOGTAE
      SEE RTSVC
 
 >
 
+fxr
+
+FXR
+
+01 P1
+NO REBOOKING REQUIRED FOR LOWEST AVAILABLE FARE
+LAST TKT DTE 02JUL23/06:11 LT in POS - SEE ADV PURCHASE
+------------------------------------------------------------
+     AL FLGT  BK T DATE  TIME  FARE BASIS      NVB  NVA   BG
+ COR
+XSCL LA   491 Q  Q 12MAR 1239  QLESL58I        12MAR12MAR 0P
+ MAD LA   706 Q  Q 12MAR 2120  QLESL58I        12MAR12MAR 0P
+XSCL LA   715 Q  Q 13APR 2340  QLESL58I        13APR13APR 0P
+ COR LA   486 Q  Q 14APR 1515  QLESL58I        14APR14APR 0P
+
+USD   850.00      12MAR24COR LA X/SCL LA MAD M425.00LA X/SCL
+ARS227800.00      LA COR M425.00NUC850.00END ROE1.000000
+ARS 16846.50-AR   XT ARS 72199.20-O5 ARS 108298.80-Q1 ARS
+ARS 12864.00-YR   2680.00-QO ARS 60166.00-S5 ARS 375.20-S7
+ARS268148.00-XT   ARS 2144.00-TQ ARS 15276.00-XR ARS 5874.60
+ARS525658.50      -JD ARS 183.20-OG ARS 951.00-QV
+RATE USED 1USD=268.00000ARS
+NO BAG INCLUDED FOR AT LEAST ONE FLIGHT
+>                                                 PAGE  2/ 3
+
+>
+
 m
 
-FXU/TS TO UPSELL STANDARD FOR 21080.80ARS
+FARE FAMILIES:    (ENTER FQFN FOR DETAILS, FXY FOR UPSELL)
+FARE FAMILY:FC1:1-2:SL
+FARE FAMILY:FC2:3-4:SL
+FXU/TS TO UPSELL SE-SL FOR 30511.80ARS
 TICKET STOCK RESTRICTION
-BG CXR: 2*UX
-PRICED WITH VALIDATING CARRIER UX - REPRICE IF DIFFERENT VC
+BG CXR: 2*LA/2*LA
+PRICED WITH VALIDATING CARRIER LA - REPRICE IF DIFFERENT VC
 TICKETS ARE NON-REFUNDABLE
-ENDOS CHGS AND REF RESTRICTED
-PAYMT RESTRICTIONS APPLY
+ENDOS NONEND-REF/CHG SEE PENALTY
 >                                                 PAGE  3/ 3
-
-
 
 '''
 
 print(tst)
+
+# Importamos la librería RE, definimos un fee por defecto
+# y preguntamos al usuario si quiere cambiarlo
+import re
+fee = 46000
+blue = 494
+fee = input("\n-------------------------------------\nDefinir fee en ARS oficial\nPor defecto es ARS46000: ")
+blue = input("\n-------------------------------------\nIndicar el tipo de cambio blue Vendedor: ")
+ventausd = input("\n----------------------------------\nIndicar el precio en USD emitiendo en MIA: ")
 
 """
 ## Cotizacion Internacional INICIADOS EN ARGENTINA
@@ -217,7 +220,7 @@ totalblue = float(total) / float(blue)
 totalmia = (float(fee) / float(blue)) + float(ventausd)*.85
 
 # Escribimos el resultado
-texto =(f'Cotización Internacional originada en Argentina:\n*TURISMO Y HOTELERÍA CONSULTORA*\nwww.thconsultora.com.ar | marco@thconsultora.com.ar | +543513070654\n-------------------------------------------------------------------\n* Compañia Emisora: {str(lineas.get(cia))}\n* Origen: {str(aeropuertos.get(orig))}\n* Despliegue de vuelos en horarios locales\n* Cia/Vuelo | Fecha | Sale | Llega | Origen | Destino \n{str(tramos)}\n* Ultimo día para emitir: {str(ltd)}\n* Equipaje incluido: {str(franquicia.get(bagage))}\n* Tipo de Cambio oficial {str(cambio)}\n* Anticipo ganancias a recuperar en AFIP ARS: {str(retenc)} por pasajero \n* (válido solo emitiendo EN PESOS)\n**Total con impuestos ARS: {str(total)}*\n* Cambios y Devoluciones: {ref}\n* Pago cash o tarjeta de crédito en 1 cuota solamente \n* Equivalente Dólares al blue USD: {str(int(totalblue))}\n**Emitiendo en USD{str(int(totalmia))} billetes físicos*\n* Tomamos reserva solo con foto de DNI o Pasaporte\n* Recomendamos llevar asistencia al viajero ver opciones aqui -> https://www.thconsultora.com.ar/shop')
+texto =(f'\n-------------------------------------------------------------------\nCotización Internacional originada en Argentina:\n*TURISMO Y HOTELERÍA CONSULTORA*\nwww.thconsultora.com.ar | email: marco@thconsultora.com.ar | Tel/Wp: +543513070654\n-------------------------------------------------------------------\n* Compañia Emisora: {str(lineas.get(cia))}\n* Origen: {str(aeropuertos.get(orig))}\n\n* Despliegue de vuelos en horarios locales\n* Cia/Vuelo | Fecha | Sale | Llega | Origen | Destino \n{str(tramos)}\n\n* Ultimo día para emitir: {str(ltd)}\n* Equipaje incluido: {str(franquicia.get(bagage))}\n* Tipo de Cambio oficial {str(cambio)}\n* Anticipo ganancias a recuperar en AFIP ARS: {str(retenc)} por pasajero \n* (válido solo emitiendo EN PESOS)\n**Total con impuestos ARS: {str(total)} por pasajero*\n* Cambios y Devoluciones: {ref}\n* Pago cash o tarjeta de crédito en 1 cuota solamente \n* Equivalente Dólares al blue USD: {str(int(totalblue))}\n**Emitiendo en USD{str(int(totalmia))} billetes físicos*\n* Tomamos reserva solo con foto de DNI o Pasaporte\n* Recomendamos llevar asistencia al viajero ver opciones aqui -> https://www.thconsultora.com.ar/shop')
 
 print(texto)
 
