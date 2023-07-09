@@ -1,5 +1,5 @@
 #!/bin/bash -x
-#
+# leer_portapapeles.sh
 # Leemos un archivo con dialog
 #
 # (c) Marco Centurion

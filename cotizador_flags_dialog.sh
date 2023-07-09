@@ -1,5 +1,7 @@
 #!/bin/bash 
 #
+# cotizardor_flags_dialog.sh
+#
 # Aprendiendo a usar sed, cat, awk, cut
 # (c) Marco Centurion
 #  Aplicamos while, flag, OPTARG y getops
@@ -8,7 +10,7 @@
 
 # Establecemos la fecha en la variable now
 now=$(date +"%d-%m-%y  %H:%M")
-commia=0.85
+commia=.85
 
 while getopts c:m:f:p: flag
 do
@@ -61,6 +63,6 @@ echo -e "$(($tarifa+$fee))"
 echo -en "\nTarifa en Dolares total por pasajero: USD "
 
 #feeusd=((fee/cambio))
-#netomia=((miami\*0.85))
+#netomia=$(echo "scale=2; $miami/0.85" | bc -l)
 
-echo -en "$((($fee/$cambio)+($miami)))"
+echo "$(echo "scale=2; (( ($miami * 0.85)  +  ($fee / $cambio) ))" | bc -l)"
