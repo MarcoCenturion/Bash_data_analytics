@@ -5,46 +5,44 @@
 #  Aplicamos while, flag, OPTARG y getops
 #  Argumentos -c cambio -m costo emitiendo en Miami -f fee -p PNR
 
-declare= -a aeropuertos
-aeropuertos(
-    [AEP]="Aeroparque, Buenos Aires"
-    [ALC]="Alicante"
-    [EZE]="Ezeiza, Buenos Aires"
-    [MAD]="Madrid"
-    [BCN]="Barcelona"
-    [CDG]="Charles De Gaulle, París"
-    [ORY]="Orly, París"
-    [SJD]="Los Cabos, Mexico"
-    [FRA]="Frankfurt"
-    [LHR]="Heathrow, London"
-    [LAP]="La Paz, Mexico"
-    [FCO]="Fiumicino, Roma"
-    [MXP]="Malpensa, Milano"
-    [MIL]="Milano"
-    [MIA]="Miami, USA"
-    [JFK]="John F. Kenedy New York"
-    [LGA]="La Guardia New York"
-    [EWR]="Newark New York"
-    [COR]="Córdoba"
-    [PTY]="Panamá"
-    [IAH]="Houston, Texas, USA"
-    [SDQ]="Santo Domingo, Repùblica Dominicana"
-    [ADZ]="San Andrés"
-    [CTG]="Cartagena de Indias"
-    [BOG]="Bogotá"
-    [MEX]="México DF"
-    [GUA]="Ciudad de Guatemala"
-    [CUN]="Cancún"
-    [PUJ]="Punta Cana"
-    [GIG]="El Galeo, Rìo de Janeiro"
-    [GRU]="Guarulhos, Sao Paulo"
-    [SDU]="Santos Dumont Rio de Janeiro"
-    [POA]="Porto Allegre"
-    [SCL]="Santiago de Chile"
-    [BUE]="Buenos Aires"
-    [SYD]="Sydney"
-    [SMR]="Santa Marta, Colombia"
-    [LIM]="Lima, Perú)
+declare -A aeropuertos
+aeropuertos([AEP]="Aeroparque, Buenos Aires" [ALC]="Alicante" \
+	    [EZE]="Ezeiza, Buenos Aires" \
+	    [MAD]="Madrid"\
+	    [BCN]="Barcelona"\
+	    [CDG]="Charles De Gaulle, París"\
+	    [ORY]="Orly, París"\
+	    [SJD]="Los Cabos, Mexico"\
+	    [FRA]="Frankfurt"\
+	    [LHR]="Heathrow, London"\
+	    [LAP]="La Paz, Mexico"\
+	    [FCO]="Fiumicino, Roma"\
+	    [MXP]="Malpensa, Milano"\
+	    [MIL]="Milano"\
+	    [MIA]="Miami, USA"\
+	    [JFK]="John F. Kenedy New York"\
+	    [LGA]="La Guardia New York"\
+	    [EWR]="Newark New York"\
+	    [COR]="Córdoba"\
+	    [PTY]="Panamá"\
+	    [IAH]="Houston, Texas, USA"\
+	    [SDQ]="Santo Domingo, Repùblica Dominicana"\
+	    [ADZ]="San Andrés"\
+	    [CTG]="Cartagena de Indias"\
+	    [BOG]="Bogotá"\
+	    [MEX]="México DF"\
+	    [GUA]="Ciudad de Guatemala"\
+	    [CUN]="Cancún"\
+	    [PUJ]="Punta Cana"\
+	    [GIG]="El Galeo, Rìo de Janeiro"\
+	    [GRU]="Guarulhos, Sao Paulo"\
+	    [SDU]="Santos Dumont Rio de Janeiro"\
+	    [POA]="Porto Allegre"\
+	    [SCL]="Santiago de Chile"\
+	    [BUE]="Buenos Aires"\
+	    [SYD]="Sydney"\
+	    [SMR]="Santa Marta, Colombia"\
+	    [LIM]="Lima, Perú)
 
 # Establecemos la fecha en la variable now
 now=$(date +"%d-%m-%y  %H:%M")
