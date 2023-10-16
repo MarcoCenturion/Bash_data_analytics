@@ -6,7 +6,7 @@
 #  Argumentos -c cambio -m costo emitiendo en Miami -f fee -p PNR
 
 declare -A aeropuertos
-aeropuertos([AEP]="Aeroparque, Buenos Aires" [ALC]="Alicante" \
+aeropuertos=([AEP]="Aeroparque, Buenos Aires" [ALC]="Alicante" \
 	    [EZE]="Ezeiza, Buenos Aires" \
 	    [MAD]="Madrid"\
 	    [BCN]="Barcelona"\
@@ -42,7 +42,8 @@ aeropuertos([AEP]="Aeroparque, Buenos Aires" [ALC]="Alicante" \
 	    [BUE]="Buenos Aires"\
 	    [SYD]="Sydney"\
 	    [SMR]="Santa Marta, Colombia"\
-	    [LIM]="Lima, Perú)
+	    [LIM]="Lima, Perú")
+
 
 # Establecemos la fecha en la variable now
 now=$(date +"%d-%m-%y  %H:%M")
@@ -73,8 +74,7 @@ renglon
 # utilizaremos para hacer la cotización
 #
 ltd=$(cat $reser | grep LAST | awk -F '-' '{print $1}')
-tarifa_usd=$(cat $
-reser | grep USD | awk 'NR == 1 {print $2}')
+tarifa_usd=$(cat $reser | grep USD | awk 'NR == 1 {print $2}')
 equipaje=$(cat $reser | grep -E '2P|1P|0P'|awk '{print $10}')
 tramos=$(cat $reser | grep -e '^  [1-9]'|cut -c 6-12,15-20,23-29,35-43 | awk '{print $0}')
 tarifa=$(cat $reser | grep -e '^ARS' | tail -1 | awk '{print $1}' | sed 's/ARS//' | awk -F . '{print $1}')
