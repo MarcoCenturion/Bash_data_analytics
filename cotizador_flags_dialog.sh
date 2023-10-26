@@ -65,7 +65,7 @@ function renglon(){
 
 # Ingresamos el valor del dolar y el Markup
 echo "Esta cotización es del día: $now"
-echo "El valor ingresado es: $cambio"
+echo "El tipo de cambio blue ingresado es: $cambio"
 echo "Markup por tkt: $fee" 
 echo "PNR leido: $reser"
 renglon
