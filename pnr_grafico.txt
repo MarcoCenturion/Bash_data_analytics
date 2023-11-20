@@ -1,0 +1,35 @@
+N.º	Vuelo	Clase	Fecha	De	a	Hora de salida	Hora de llegada	Avión	Duración
+1.	ET 507	U - Turista	02MAY24	EZE
+Ministro Pistarini	ADD
+T2 - Bole Internacional	21:55	19:45 (+1 día)	Airbus Industrie A350	25h40
+2.	ET 712	U - Turista	04MAY24	ADD
+Bole Internacional	FCO
+Fiumicino	00:05	04:35	Airbus Industrie A350
+3.	ET 727	E - Turista	29MAY24	FCO
+T3 - Fiumicino	ADD
+T2 - Bole Internacional	23:40	07:10 (+1 día)	Airbus Industrie A350	25h45
+4.	ET 506	E - Turista	30MAY24	ADD
+T2 - Bole Internacional	EZE
+Ministro Pistarini	10:05	20:25	Airbus Industrie A350
+Detalles de Pasajero (1 + 0 INF)
+#	PTC	Título	Apellidos	Nombre	Fecha de nacimiento	Contacto
+1.
+ADT
+
+DDMMMYYYY
+Correo electrónico :	
+ 
+Teléfono :	
+ 
+Detalles de Pago (1)
+Forma de pago	
+Seleccione...  	
+Dirección de facturación (1)
+Nueva dirección...
+ 	
+ 
+Información sobre precios (2)
+Precio total que debe pagarse: 849984.00 ARS (Para todos los pasajeros, con impuestos y descuento)
+#	PTC	Tarifa	Tasa	Total pendiente de pago
+1.	ADT	154972.00 ARS	695012.00 ARS	849984.00 ARS
+Total		154972.00 ARS	695012.00 ARS	849984.00 ARS

@@ -1,9 +1,9 @@
 #!/bin/bash 
-###################. cotizardor_flags_dialog.sh
+################### cotizardor_grafico1.sh
 # Aprendiendo a usar sed, cat, awk, cut
 # (c) Marco Centurion
 #  Aplicamos while, flag, OPTARG y getops
-#  Argumentos -c cambio -m costo emitiendo en Miami -f fee -p PNR
+#  Argumentos -c cambio -f fee -p PNR
 
 declare -A aeropuertos
 aeropuertos=([AEP]="Aeroparque, Buenos Aires" [ALC]="Alicante" \
@@ -49,11 +49,10 @@ aeropuertos=([AEP]="Aeroparque, Buenos Aires" [ALC]="Alicante" \
 now=$(date +"%d-%m-%y  %H:%M")
 commia=.85
 
-while getopts c:m:f:p: flag
+while getopts c:f:p: flag
 do
     case "${flag}" in
         c) cambio=${OPTARG};;
-        m) miami=${OPTARG};;
         f) fee=${OPTARG};;
 	p) reser=${OPTARG};;
     esac
