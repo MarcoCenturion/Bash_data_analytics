@@ -1,9 +1,11 @@
 #!/bin/bash 
-###################. cotizardor_flags_dialog.sh
+# cotizardor_flags_dialog.sh
 # Aprendiendo a usar sed, cat, awk, cut
 # (c) Marco Centurion
 #  Aplicamos while, flag, OPTARG y getops
-#  Argumentos -c cambio -m costo emitiendo en Miami -f fee -p PNR
+#  Argumentos -c cambio -m costo emitiendo en Miami -f fee -p PN
+#  Ejemplo de uso:
+#  ./cotizador_flags_dialog.sh -c 1000 -m 1999 -p pnr4.txt -f 45000  
 
 declare -A aeropuertos
 aeropuertos=([AEP]="Aeroparque, Buenos Aires" [ALC]="Alicante" \
@@ -97,4 +99,4 @@ echo -e "$endos"
 echo -en "\nTarifa en Pesos Total por pasajero: ARS "
 echo -e "$(($tarifa+$fee))"
 echo -en "\nTarifa en Dolares total por pasajero: USD "
-echo "$(echo "scale=2; (( ($miami * 0.85)  +  ($fee / $cambio) ))" | bc -l)"
+echo "$(echo "scale=2; (( ($miami)  +  ($fee / $cambio) ))" | bc -l)"

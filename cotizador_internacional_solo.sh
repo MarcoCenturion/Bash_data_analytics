@@ -2,7 +2,7 @@
 ##################### COTIZADOR_INTERNACIONAL_SOLO.SH
 # Aprendiendo a usar sed, cat, awk, cut
 # (c) Marco Centurion
-# Primer argumento arhivo txt segundo argumento markupk tercero dolarblue
+# 1) arhivo.txt 2) markup 3) dolarblue
 # -------------------------------------
 
 # Grabamos los colores de Savitar
@@ -35,7 +35,7 @@ echo -ne "\n${greenColour}Esta cotización es del día: $now${endColour}"
 echo -ne "\n${greenColour}El valor del Markup es: $i ${endColour}"
 echo -ne "\n${greenColour}El valor del Dolar Blue es: $2 ${endColour}"
 
-dolarblue=$2
+dolarblue=$3
 
 markup=$2
 
