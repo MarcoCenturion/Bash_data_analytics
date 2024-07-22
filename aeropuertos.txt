@@ -1,4 +1,4 @@
-aeropuertos = {
+{
     "ADD": "Addis Ababa, Ethiopia",
     "ADZ": "San Andrés",
     "AEP": "Aeroparque, Buenos Aires",

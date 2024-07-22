@@ -1,4 +1,4 @@
-cabecera = {
+{
     "th": "\n*TURISMO Y HOTELERÍA CONSULTORA* https://www.thconsultora.com.ar\n email: marco@thconsultora.com.ar | Tel/Wp: +543513070654",
     "gr": "\n*GRIFFIN VIAJES* | Leg. 10659 | San Jeronimo 167 Local 16 Gal. Saint Michell\nwww.griffinviajes.com.ar | email: aulavirtualturismo.com.ar |\
  cel/Wp: +543513070654 | Tel: +543514245547 ",

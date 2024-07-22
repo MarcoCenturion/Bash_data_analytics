@@ -1,4 +1,4 @@
-lineas = {
+{
     "AC": "Air Canada",
     "AR": "Aerolíneas Argentinas",
     "AV": "AVIANCA",

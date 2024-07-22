@@ -1,4 +1,4 @@
-fee_camuflado = {
+{
     0:"M",
     1:"U",
     2:"R",

@@ -1,4 +1,4 @@
-franquicia = {
+{
     "0P": "Solo 1 carryon de 10 kg. en cabina, sin equipaje en bodega",
     "1P": "Carryon de 10 kg. en cabina + una maleta despachada en bodega de 23kg",
     "2P": "Carryon de 10 kg. en cabina + dos maletas despachadas en bodega de 23kg c/u",
