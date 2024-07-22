@@ -1,0 +1,9 @@
+cabecera = {
+    "th": "\n*TURISMO Y HOTELERÍA CONSULTORA* https://www.thconsultora.com.ar\n email: marco@thconsultora.com.ar | Tel/Wp: +543513070654",
+    "gr": "\n*GRIFFIN VIAJES* | Leg. 10659 | San Jeronimo 167 Local 16 Gal. Saint Michell\nwww.griffinviajes.com.ar | email: aulavirtualturismo.com.ar |\
+ cel/Wp: +543513070654 | Tel: +543514245547 ",
+    "pa":"\n*Pampero Viajes y Turismo | EVT Leg 18042* | \nAviador Richardson 2150 1ºA - Córdoba | Tel: 3515190438 | Mail: pamperoviajesyturismo@gmail.com",
+    "ni":"\n*TRIBU TRAVEL TOUR* | Leg. 18163 \nhttps://tribu-travel-tour.misitiosimple.com/\nAvellaneda 534 Alta Gracia | Tel/Wp:3513019736",
+    "ja":"\n*Jazz Operador* | Andrés Piñero 7774, Argüello, Córdoba CP 5021. ARGENTINA\n https://www.jazzoperador.tur.ar/ tecno@jazzoperador.com.ar | Tel/WP: +543513070654 ",
+    "pi":"\n*Turismo General Pico SRL*\n106 nº 823, General Pico, La Pampa -AR- | Tel:02302 432900 email: consultas@turispico.com.ar |\n web: https://www.turispico.com.ar"
+}

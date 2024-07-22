@@ -13,8 +13,7 @@ https://developer.ibm.com/technologies/systems/articles/au-unixtext/
 # Manupulacion de textos en español
 
 http://persoal.citius.usc.es/tf.pena/ASR/Tema_2html/node23.html
-
-# manual on line vim
+ open('pnr6.txt')anual on line vim
 https://www.tutorialspoint.com/unix/unix-vi-editor.htm
 
 # filtro vuelos con awk

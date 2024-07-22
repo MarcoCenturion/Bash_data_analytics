@@ -1,0 +1,7 @@
+devoluciones = {
+    "NON-REF":"No permite devoluciones ni cambios",
+    "NON-END":"No permite devoluciones ni cambios",
+    "ENDOS":"No permite devoluciones ni cambios",
+    "NONREF":"No permite devoluciones ni cambios",
+    "NONEND":"No permite devoluciones ni cambios"
+}

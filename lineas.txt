@@ -1,0 +1,22 @@
+lineas = {
+    "AC": "Air Canada",
+    "AR": "Aerolíneas Argentinas",
+    "AV": "AVIANCA",
+    "AZ": "Ita",
+    "CM": "Copa Airlines",
+    "LA": "Latam",
+    "KL": "KLM, Royal Dutch Airlines",
+    "AA": "American Airlines",
+    "DL": "Delta Airlines",
+    "UX": "Air Europa",
+    "IB": "Iberia",
+    "AF": "Air France",
+    "UA": "United Airlines",
+    "G3": "Gol Lihnas Aereas",
+    "WJ": "Jet Smart",
+    "OB": "Boliviana de Aviación",
+    "H2": "Sky Airlines",
+    "ET": "Ethiopian Airlines",
+    "JA": "Jetsmart Spa"
+}
+
