@@ -1,5 +1,5 @@
-financiacion = {
+{
     "AR": "https://www.aerolineas.com.ar/es-ar/reservasservicios/bancos",
-    "WJ":"https://jetsmart.com/ar/es/minisitios/medios-de-pago"
+    "WJ": "https://jetsmart.com/ar/es/minisitios/medios-de-pago"
 }
 

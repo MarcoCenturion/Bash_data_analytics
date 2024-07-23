@@ -2,7 +2,8 @@
 #
 # Aprendiendo a usar sed, cat, awk, cut
 # (c) Marco Centurion
-# -------------------------------------
+# Argumento $1 es el archivo de texto con el PNR + mascara
+# --------------------------------------------------------:
 
 # Grabamos los colores de Savitar
 greenColour="\e[0;32m\033[1m"
