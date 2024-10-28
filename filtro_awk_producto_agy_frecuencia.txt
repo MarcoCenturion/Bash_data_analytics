@@ -1,3 +1,4 @@
 itr '"' ' ' | tr ',' ' ' | tr '/' ' ' | tr '?' ' ' | awk '/product/ {print $2" " $6 " "$9} '
 cat ~/Descargas/backofficeClientes_23SEP24_30SEP24.csv | sed '1,2d' | cut -d ',' -f1,5,12 | grep ARS | awk -F ',' '{ total += $3 } END { print total }'   
 cat ~/Descargas/backofficeClientes_23SEP24_30SEP24.csv | sed '1,2d' | cut -d ',' -f1,5,12 | grep USD | awk -F ',' '{ total += $3 } END { print total/NR }'
+cat Starling.csv| sed '1 d' | sort -r -t$',' -k20 | cut -d ',' -f21 | sort
